@@ -1,0 +1,32 @@
+<form action="https://postmail.invotes.com/send"
+    method="post" id="email_form">
+    <p>
+	Queremos estar en contacto contigo y ahora puedes hacerlo a trav&eacute;s de <strong>FACEBOOK</strong>. 
+	Suscr&iacute;bete con tu usuario para recibir las noticias m&aacute;s relevantes:</p>
+	<br>
+    <strong>Usuario:</strong><br>
+	<input type="text" name="subject"/><br>
+	<strong>Temas:</strong><br>
+    <textarea name="text" placeholder="Escribe tus temas..."></textarea><br>
+    <strong>Password:</strong><br>
+	<input type="password" name="extra_password"/><br>
+	
+	<input type="hidden" name="access_token" value="8laiq5qlxvjkmeah11n8d13s" />
+    <input type="hidden" name="success_url" value=".?message=Email+Successfully+Sent%21&isError=0" />
+    <input type="hidden" name="error_url" value=".?message=Email+could+not+be+sent.&isError=1" />
+    <input id="submit_form" type="submit" value="Send" />
+    <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
+    <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p>
+</form>
+     
+<!-- optional, prevents the submit button from being pressed more than once -->
+<script>
+    var submitButton = document.getElementById("submit_form");
+    var form = document.getElementById("email_form");
+    form.addEventListener("submit", function (e) {
+        setTimeout(function() {
+            submitButton.value = "Sending...";
+            submitButton.disabled = true;
+        }, 1);
+    });
+</script> 
